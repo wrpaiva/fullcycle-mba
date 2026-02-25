@@ -37,10 +37,12 @@ Este projeto implementa um chatbot inteligente que responde perguntas **exclusiv
 │   ├── ingest.py           # Script de ingestão do PDF
 │   ├── search.py           # Módulo de busca semântica
 │   └── chat.py             # CLI principal para interação
+├── tests/
+│   ├── __init__.py         # Módulo de testes
+│   ├── test_models.py      # Testes de modelos OpenAI
+│   ├── test_system.py      # Testes do sistema RAG
+│   └── ingestion_fake.py   # Ingestão com FakeEmbeddings
 ├── generate_pdf.py         # Utilitário para gerar PDF de exemplo
-├── ingestion_fake.py       # Ingestão com FakeEmbeddings (testes)
-├── test_models.py          # Testes de modelos OpenAI
-├── test_system.py          # Testes do sistema RAG
 └── README.md
 ```
 
@@ -147,17 +149,17 @@ Faça sua pergunta: sair
 
 ### Testar modelos OpenAI disponíveis
 ```bash
-python test_models.py
+python tests/test_models.py
 ```
 
 ### Testar sistema com queries de exemplo
 ```bash
-python test_system.py
+python tests/test_system.py
 ```
 
 ### Ingestão com FakeEmbeddings (sem API)
 ```bash
-python ingestion_fake.py
+python tests/ingestion_fake.py
 ```
 
 ## 🧼 Clean Code
